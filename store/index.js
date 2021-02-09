@@ -43,9 +43,4 @@ export const getters = {
       return state.forecasts[index].weather[0].description
     }
   },
-  getCity() {
-    return function () {
-      return state.city
-    }
-  },
 }
