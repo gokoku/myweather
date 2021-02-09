@@ -45,7 +45,5 @@ export default {
       fixed: false
     }
   }
-
-
 }
 </script>

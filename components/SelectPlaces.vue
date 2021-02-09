@@ -43,7 +43,7 @@ export default {
       let url = `https://api.openweathermap.org/data/2.5/forecast?q=${this.select.code}&APPID=${process.env.API_KEY}`
       await this.$axios.get(url)
             .then(res => {
-              this.$nuxt.context.store.commit('initForecasts', res.data)
+              this.$store.commit('initForecasts', res.data)
             })
     }
   }
