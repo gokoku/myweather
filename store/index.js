@@ -1,13 +1,15 @@
 import moment from 'moment'
 
 export const state = () => ({
+  city: '',
   forecasts: new Array(),
 })
 
 export const mutations = {
-  initForecasts(state, fores) {
+  initForecasts(state, data) {
     state.forecasts = new Array()
-    fores.forEach((elem) => state.forecasts.push(elem))
+    data.list.forEach((elem) => state.forecasts.push(elem))
+    state.city = data.city.name
   },
 }
 
@@ -39,6 +41,11 @@ export const getters = {
   getDescription(state) {
     return function (index) {
       return state.forecasts[index].weather[0].description
+    }
+  },
+  getCity() {
+    return function () {
+      return state.city
     }
   },
 }

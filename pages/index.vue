@@ -30,7 +30,7 @@ export default {
   fetch({ $axios, store }) {
     return $axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=Takizawa&APPID=${process.env.API_KEY}`)
     .then(res => {
-      store.commit('initForecasts', res.data.list)
+      store.commit('initForecasts', res.data)
     })
   },
 }

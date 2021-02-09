@@ -1,13 +1,19 @@
 <template>
   <v-app dark>
     <v-app-bar
+      dense
       fixed
       app
     >
       <v-toolbar-title v-text="title" />
+      <v-spacer></v-spacer>
+      <v-col cols="2">
+        <SelectPlaces />
+      </v-col>
     </v-app-bar>
     <v-main>
       <v-container>
+        <p>{{ city }}</p>
         <nuxt />
       </v-container>
     </v-main>
@@ -21,12 +27,25 @@
 </template>
 
 <script>
+import SelectPlaces from '../components/SelectPlaces'
 export default {
-  data () {
+  name: "layouts",
+  components: {
+    SelectPlaces
+  },
+
+  computed: {
+    city() {
+      return this.$store.state.city
+    }
+  },
+  data() {
     return {
-      fixed: true,
-      title: 'Open Weather'
+      title: 'Open Weather',
+      fixed: false
     }
   }
+
+
 }
 </script>
