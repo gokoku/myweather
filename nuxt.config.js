@@ -71,4 +71,6 @@ export default {
   env: {
     API_KEY,
   },
+
+  target: 'static',
 }
